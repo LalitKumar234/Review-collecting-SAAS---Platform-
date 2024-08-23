@@ -3,15 +3,15 @@
 ReviewCollect is a comprehensive SaaS platform designed to help businesses effortlessly collect and showcase customer testimonials. Whether you need text-based feedback or video testimonials, ReviewCollect offers a customizable and user-friendly experience that ensures you get the most out of your customer interactions.
 
 ## Features
--User Registration & Login: Secure user registration and login functionality to keep your data safe and personalized.
+- User Registration & Login: Secure user registration and login functionality to keep your data safe and personalized.
 
--Customizable Review Forms: Create review forms tailored to your needs. Choose between collecting text testimonials or video testimonials with customizable fields.
--Seamless Video Input: If enabled, the video input feature allows customers to record testimonials directly using their device's camera.
--Dynamic Form Fields: Include essential fields such as name, email, role, company, website link, and profile picture upload.
--Customizable Thank You Page: Tailor the thank you page to leave a lasting impression on your customers after they submit their testimonials.
--Easy Sharing: Share your form effortlessly via a unique link. Your customers can access the form through email or any other communication channel.
--Real-time Dashboard: View all submitted testimonials directly in your dashboard. Each entry is displayed as a row, providing a clear and organized view.
--Wall of Love: Curate and edit testimonials before showcasing them on your Wall of Love—a dedicated space to highlight customer feedback.
+- Customizable Review Forms: Create review forms tailored to your needs. Choose between collecting text testimonials or video testimonials with customizable fields.
+- Seamless Video Input: If enabled, the video input feature allows customers to record testimonials directly using their device's camera.
+- Dynamic Form Fields: Include essential fields such as name, email, role, company, website link, and profile picture upload.
+- Customizable Thank You Page: Tailor the thank you page to leave a lasting impression on your customers after they submit their testimonials.
+- Easy Sharing: Share your form effortlessly via a unique link. Your customers can access the form through email or any other communication channel.
+- Real-time Dashboard: View all submitted testimonials directly in your dashboard. Each entry is displayed as a row, providing a clear and organized view.
+- Wall of Love: Curate and edit testimonials before showcasing them on your Wall of Love—a dedicated space to highlight customer feedback.
 
 
 ## Technologies Used
