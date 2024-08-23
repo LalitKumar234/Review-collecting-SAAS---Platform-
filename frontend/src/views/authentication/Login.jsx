@@ -17,7 +17,7 @@ import { useToast } from "@/components/ui/use-toast"
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../redux/actions/authAction'
 import { useDispatch } from 'react-redux';
-import { loginFail, loginSuccess } from '../../redux/reducers/authSlice'
+import { loginFail, loginSuccess, userLoaded } from '../../redux/reducers/authSlice'
 
 
 const Login = () => {
@@ -33,11 +33,11 @@ const Login = () => {
     axios.post(`${backendConfig.baseUrl}auth/login`, userDetails)
       .then((res) => {
         console.log(res.data)
-        navigate('/')
+        // navigate('/')
         localStorage.setItem('userDetails', JSON.stringify({
           email: res.data.user.email,
           username: res.data.user?.username,
-          formId: res.data.formId
+          formId: res.data.form.formId
         }))
         localStorage.setItem('isLoggedIn', true)
         localStorage.setItem('token', res.data.tokens.access.token)
@@ -45,7 +45,7 @@ const Login = () => {
         dispatch(userLoaded({
           email: res.data.user.email,
           username: res.data.user?.username,
-          formId: res.data.formId
+          formId: res.data.form.formId
         }));
       })
       .catch((err) => {

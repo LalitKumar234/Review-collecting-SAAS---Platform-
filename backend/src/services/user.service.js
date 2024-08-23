@@ -6,9 +6,9 @@ import bcrypt from "bcryptjs"
 import { User } from "../models/user.model.js";
 
 const getUserByEmail = async (email) => {
-    const userObj = await User.findOne({ email });
-    return userObj
-}
+    const userObj = await User.findOne({ email })
+    return userObj;
+};
 
 
 const createUser = async (user) => {

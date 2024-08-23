@@ -25,9 +25,6 @@ const createNewForm = async (userId) => {
     const newForm = new Form({
         user: existingUser,
         formId,
-        // questions: ["What is the best thing about [our product / service]",
-        //     "How has [our product / service] helped you?",
-        //     "Who are you / what are you working on?"],
     })
 
     const session = await mongoose.startSession();

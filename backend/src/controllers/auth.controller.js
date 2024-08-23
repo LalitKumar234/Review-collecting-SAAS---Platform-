@@ -4,7 +4,7 @@ import { generateAuthTokens } from "../services/token.service.js";
 import { createUser } from "../services/user.service.js";
 import httpStatus from "http-status";
 import catchAsync from "../utils/catchAsync.js";
-import { createNewForm } from "../services/form.service.js";
+import { createNewForm, getAllForms } from "../services/form.service.js";
 
 const register = catchAsync(async (req, res) => {
     const user = await createUser(req.body);
@@ -18,8 +18,10 @@ const login = catchAsync(async (req, res) => {
 
     console.log(email, password, 'password')
     const user = await loginUserWithEmailAndPassword(email, password);
+    const form = await getAllForms(user._id);
+    console.log(user, form, "login")
     const tokens = await generateAuthTokens(user);
-    res.status(httpStatus.OK).send({ user, tokens })
+    res.status(httpStatus.OK).send({ user, tokens, form:form.forms[0] });
 });
 
 

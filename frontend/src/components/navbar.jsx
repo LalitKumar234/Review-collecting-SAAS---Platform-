@@ -24,7 +24,8 @@ const Navbar = () => {
         navigate('/login');
     }
     return (
-        <div className='border-b w-full px-8 py-2 flex justify-end items-center bg-primary-foreground'>
+        <div className='border-b w-full px-8 py-2 flex justify-between items-center bg-primary-foreground'>
+            <h2 className="font-semibold text-xl">Review<span className="text-primary">Collect</span></h2>
             <DropdownMenu>
                 <DropdownMenuTrigger>
                     <Avatar>

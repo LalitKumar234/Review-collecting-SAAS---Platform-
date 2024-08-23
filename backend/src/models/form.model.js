@@ -1,50 +1,5 @@
 import mongoose from "mongoose";
 
-
-const formConfigSchema = mongoose.Schema({
-    _id: false,
-    questions: ["What is the best thing about [our product / service]", "How has [our product / service] helped you?", "Who are you / what are you working on?"],
-    enableVideo: {
-        type: Boolean,
-        default: true
-    },
-    thankYouTitle: {
-        type: String,
-        default: "Thank you!"
-    },
-    thankYouMessage: {
-        type: String,
-        default: "Thank you so much for your shoutout! It means a ton to us!"
-    },
-    includeCta: {
-        type: Boolean,
-        default: false
-    },
-    ctaText: {
-        type: String,
-        default: "Button Text"
-    },
-    ctaLink: {
-        type: String,
-    },
-    includeAvatarField: {
-        type: Boolean,
-        default: true
-    },
-    includeNameField: {
-        type: Boolean,
-        default: true
-    },
-    includeEmailField: {
-        type: Boolean,
-        default: true
-    },
-    includeRoleField: {
-        type: Boolean,
-        default: true
-    },
-})
-
 const formSchema = mongoose.Schema({
     name: {
         type: String,

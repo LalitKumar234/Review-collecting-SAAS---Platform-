@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux'
 
 const DashboardLayout = () => {
     const token = useSelector((state) => state.auth.token);
-    const location = useLocation()
-    const [isOpen, setisOpen] = useState(false)
+    const location = useLocation();
+    const [isOpen, setisOpen] = useState(false);
 
     return (
         <main className='w-full h-screen'>

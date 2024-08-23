@@ -19,7 +19,7 @@ const Builder = () => {
     const axiosPrivate = useAxiosPrivate();
     const [page, setPage] = useState(0);
     const id = userDetails.formId;
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const [formDetails, setFormDetails] = useState({
         name: "Form 1",
         title: "Would you like to write a review for us?",
