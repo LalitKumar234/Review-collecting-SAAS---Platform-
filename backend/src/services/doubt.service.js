@@ -1,8 +1,8 @@
-const httpStatus = require("http-status");
-const { Doubt } = require("../models/doubt.model");
-const { User } = require("../models/user.model");
-const { mongoose } = require("mongoose");
-const ApiError = require("../utils/ApiError");
+import httpStatus from "http-status"
+import { Doubt } from "../models/doubt.model.js"
+import { User } from "../models/user.model.js";
+import mongoose from "mongoose";
+import ApiError from "../utils/ApiError.js";
 
 const createDoubt = async (doubt, userId) => {
     let existingStudent;
@@ -34,9 +34,9 @@ const createDoubt = async (doubt, userId) => {
 
     const session = await mongoose.startSession();
     session.startTransaction();
-    await newDoubt.save({ session })
+    await newDoubt.save({ session });
     existingStudent.doubts.push(newDoubt);
-    await existingStudent.save({ session })
+    await existingStudent.save({ session });
     await session.commitTransaction();
 
     return newDoubt
@@ -83,7 +83,7 @@ const updateDoubt = async (data, id, userId) => {
 }
 
 
-module.exports = {
+export {
     createDoubt,
     getAllMatchingDoubts,
     getAllPreviousDoubts,

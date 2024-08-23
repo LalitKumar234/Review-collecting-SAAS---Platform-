@@ -11,14 +11,19 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import axios from 'axios'
-import { backendConfig } from '../config'
+import { backendConfig } from '../../config'
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "@/components/ui/use-toast"
 import { Link, useNavigate } from 'react-router-dom'
+import { login } from '../../redux/actions/authAction'
+import { useDispatch } from 'react-redux';
+import { loginFail, loginSuccess } from '../../redux/reducers/authSlice'
 
-const Login = ({ setRole }) => {
+
+const Login = () => {
   const { toast } = useToast()
   const navigate = useNavigate()
+  const dispatch = useDispatch();
   const [userDetails, setUserDetails] = useState({
     email: "",
     password: "",
@@ -28,24 +33,28 @@ const Login = ({ setRole }) => {
     axios.post(`${backendConfig.baseUrl}auth/login`, userDetails)
       .then((res) => {
         console.log(res.data)
-        setRole(res.data.user.role)
-        res.data.user.role === "teacher" ? navigate('/teacher') : navigate('/student')
+        navigate('/')
         localStorage.setItem('userDetails', JSON.stringify({
           email: res.data.user.email,
-          role: res.data.user.role,
           username: res.data.user?.username,
-          token: res.data.tokens.access.token,
-          language: res.data.user?.language,
-          teacherDetails: { subjectsAllowed: res.data.user.role === "teacher" ? res.data.user.subjectsAllowed : null }
+          formId: res.data.formId
         }))
         localStorage.setItem('isLoggedIn', true)
+        localStorage.setItem('token', res.data.tokens.access.token)
+        dispatch(loginSuccess(res.data.tokens.access.token));
+        dispatch(userLoaded({
+          email: res.data.user.email,
+          username: res.data.user?.username,
+          formId: res.data.formId
+        }));
       })
       .catch((err) => {
-        console.log(err.request.status, 'error')
+        console.log(err)
+        dispatch(loginFail(err.response.data.message || 'Login failed'));
         toast({
           variant: "destructive",
           title: "Uh oh!",
-          description: err.request.status === 401 ? "Email or password incorrect" : "Something went wrong please try again after sometimes",
+          description: err?.request?.status === 401 ? "Email or password incorrect" : "Something went wrong please try again after sometimes",
         })
       })
   }
@@ -83,7 +92,7 @@ const Login = ({ setRole }) => {
           </CardContent>
           <CardFooter className="flex flex-col">
             <Button className="w-full" onClick={handleLogin}>Login</Button>
-            <p className='mt-2 text-sm'>Don't have an account?<Link to="/register" className="text-blue-400"> Register</Link></p>
+            <p className='mt-2 text-sm'>Don't have an account?<Link to="/signup" className="text-blue-400"> Register</Link></p>
           </CardFooter>
         </Card>
       </div>

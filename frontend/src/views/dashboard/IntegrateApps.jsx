@@ -1,0 +1,60 @@
+import React from 'react'
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardHeader
+} from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+
+const IntegrateApps = () => {
+    return (
+        <div>
+            <h1 className='font-semibold'>Integrate Apps</h1>
+            <div className='flex flex-wrap mt-5 gap-5'>
+                <Card className="p-2 cursor-pointer w-[20rem] text-center">
+                    <CardContent className="flex gap-4 p-0 items-center">
+                        <img className="w-10 h-auto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Google_Sheets_logo_%282014-2020%29.svg/800px-Google_Sheets_logo_%282014-2020%29.svg.png" alt="" />
+                        <div className='text-left flex flex-col justify-start'>
+                            <h2 className='font-semibold text-sm'>Google Sheets</h2>
+                            <p className='text-sm text-slate-500'>Get your submissions to Google Sheets</p>
+                        </div>
+                        <Button variant="secondary">Connect</Button>
+                    </CardContent>
+                </Card>
+                <Card className="p-2 cursor-pointer w-[20rem] text-center">
+                    <CardContent className="flex gap-4 p-0 items-center">
+                        <img className="w-10 h-auto" src="data:image/jpeg;base64,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" alt="" />
+                        <div className='text-left flex flex-col justify-start'>
+                            <h2 className='font-semibold text-sm'>Hubspot</h2>
+                            <p className='text-sm text-slate-500'>Get your submissions to Hubspot CRM</p>
+                        </div>
+                        <Button variant="secondary">Connect</Button>
+                    </CardContent>
+                </Card>
+                <Card className="p-2 cursor-pointer w-[20rem] text-center">
+                    <CardContent className="flex gap-4 p-0 items-center">
+                        <img className="w-10 h-auto" src="https://static-00.iconduck.com/assets.00/whatsapp-icon-2040x2048-8b5th74o.png" alt="" />
+                        <div className='text-left flex flex-col justify-start'>
+                            <h2 className='font-semibold text-sm'>Whatsapp</h2>
+                            <p className='text-sm text-slate-500'>Get a notifications directly to whatsapp</p>
+                        </div>
+                        <Button variant="secondary">Connect</Button>
+                    </CardContent>
+                </Card>
+                <Card className="p-2 cursor-pointer w-[20rem] text-center">
+                    <CardContent className="flex gap-4 p-0 items-center">
+                        <img className="w-10 h-auto" src="data:image/png;base64,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" alt="" />
+                        <div className='text-left flex flex-col justify-start'>
+                            <h2 className='font-semibold text-sm'>Gmail</h2>
+                            <p className='text-sm text-slate-500'>Get a notifications directly to your gmail</p>
+                        </div>
+                        <Button variant="secondary">Connect</Button>
+                    </CardContent>
+                </Card>
+            </div>
+        </div>
+    )
+}
+
+export default IntegrateApps

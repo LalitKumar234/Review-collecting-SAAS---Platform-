@@ -1,5 +1,5 @@
-const jwt = require("jsonwebtoken");
-const { tokenTypes } = require("../config/token");
+import jwt from "jsonwebtoken"
+import { tokenTypes } from "../config/token.js";
 
 
 const generateToken = (userId, expires, type, secret = "jwt-secret") => {
@@ -13,7 +13,7 @@ const generateToken = (userId, expires, type, secret = "jwt-secret") => {
 };
 
 const generateAuthTokens = async (user) => {
-    const expires = Math.floor(Date.now() / 1000) + 60 * 60;
+    const expires = Math.floor(Date.now() / 1000) + 2 * 24 * 60 * 60;
 
     const accessToken = generateToken(user.id, expires, tokenTypes.ACCESS)
     return {
@@ -24,12 +24,8 @@ const generateAuthTokens = async (user) => {
     }
 };
 
-const getUserDetailsFromToken = async(token) =>{
-    
-}
 
-
-module.exports = {
+export {
     generateToken,
     generateAuthTokens,
 };

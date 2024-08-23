@@ -1,13 +1,14 @@
-const express = require("express");
-const auth = require("../middlewares/auth.middleware");
-const doubtController = require("../controllers/doubt.controller");
+import express from "express";
+import { auth } from "../middlewares/auth.middleware.js"
+import { doubt, getDoubts, resolveDoubt } from "../controllers/doubt.controller.js"
 
 
 const router = express.Router();
 
 
-router.post('/', auth, doubtController.doubt)
-router.get('/', auth, doubtController.getDoubts)
-router.put('/:id', auth, doubtController.resolveDoubt)
+router.post('/', auth, doubt)
+router.get('/', auth, getDoubts)
+router.put('/:id', auth, resolveDoubt)
 
-module.exports = router;
+// module.exports = router;
+export default router;

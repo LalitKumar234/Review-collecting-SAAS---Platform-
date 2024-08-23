@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #widget-container {
+        /* width: 1px; */
+        min-width: 100%;
+        height: 100%;
+        border: 0;
+    }
+</style>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.2/iframeResizer.min.js"></script>
+    <iframe id="widget-container" src="http://localhost:5173/wall-of-love/wall-9b1deb4d?embed=true"
+        class="wall-of-love" style="height: auto;"></iframe>
+        <script>
+            iFrameResize({
+                log: true,
+                 // Set a minimum height in pixels
+                heightCalculationMethod: 'max'
+            }, '#widget-container');
+        </script>
+</body>
+
+</html>

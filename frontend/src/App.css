@@ -2,6 +2,81 @@
   margin: 0 auto;
   height: 100vh;
 }
-.body{
+
+.body {
   overflow-x: hidden;
+}
+
+.sideNav {
+  width: 16rem;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.collapse-sideNav {
+  width: 4.4rem;
+}
+
+.mainDashboard {
+  width: calc(100% - 16rem);
+  margin-left: 16rem;
+  height: 100vh;
+}
+
+.collapse-mainDashboard {
+  width: calc(100% - 4.4rem);
+  margin-left: 4.4rem;
+}
+
+.items button {
+  color: var(--foreground);
+  background-color: transparent;
+}
+
+.items button:hover {
+  color: var(--background);
+}
+
+button :focus-visible {
+  outline: none;
+}
+
+.builder {
+  width: 100%;
+  height: 100vh;
+  background-image: url(https://dlvkyia8i4zmz.cloudfront.net/WrvMeqsZQvGwvCxaAU6b_dot.svg);
+  background-size: 24px 24px;
+  background-color: rgb(248, 248, 248);
+}
+
+/* .overflow-x-auto::before, */
+.overflow-x-auto::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  /* Adjust the width of the fade blur effect */
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.overflow-x-auto::after {
+  right: 0;
+  left: auto;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.container-masonary {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: masonry;
+}
+
+.column-gap{
+  column-gap: 10px;
+}
+.formEditor{
+  width: calc(100% - 16rem);
 }

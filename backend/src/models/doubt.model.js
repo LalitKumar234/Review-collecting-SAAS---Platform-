@@ -1,20 +1,4 @@
-// module.exports = (sequelize, DataTypes) => {
-//     const Doubt = sequelize.define("user", {
-//         subject: {
-//             type: DataTypes.STRING
-//         },
-//         language: {
-//             type: DataTypes.STRING
-//         },
-//         doubt: {
-//             type: DataTypes.STRING
-//         }
-//     });
-
-//     return Doubt;
-// };
-
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const doubtSchema = mongoose.Schema({
     doubtTitle: {
@@ -43,6 +27,4 @@ const doubtSchema = mongoose.Schema({
     },
 },{ timestamps: true })
 
-const Doubt = mongoose.model("doubts", doubtSchema);
-
-module.exports = { Doubt }
+export const Doubt = mongoose.model("doubts", doubtSchema);

@@ -1,7 +1,7 @@
-const httpStatus = require("http-status");
-const jwt = require("jsonwebtoken");
+import httpStatus from "http-status";
+import jwt from "jsonwebtoken";
 
-const auth = (req, res, next) => {
+export const auth = (req, res, next) => {
     const token = String(req.headers.authorization)
         .replace(/^bearer|^jwt/i, "")
         .replace(/^\s+|\s+$/gi, "");
@@ -19,7 +19,6 @@ const auth = (req, res, next) => {
         next();
     } catch (err) {
         console.log(err);
-        res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: "Invalid Token"  });
+        res.status(httpStatus.UNAUTHORIZED).json({ message: "Invalid Token"  });
     }
 };
-module.exports = auth;

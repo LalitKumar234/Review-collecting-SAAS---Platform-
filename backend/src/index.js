@@ -1,6 +1,5 @@
-const app = require("./app");
-
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import app from "./app.js";
 
 const connectionParams = {
      useNewUrlParser: true 

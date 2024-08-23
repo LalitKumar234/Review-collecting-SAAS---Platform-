@@ -1,32 +1,31 @@
-const express = require("express");
-const cors = require("cors");
-const routes = require("./routes");
-const { errorHandler } = require("./middlewares/errorhandler.middleware");
-require("dotenv").config();
-
+import express from "express";
+import cors from "cors"
+import routes from "./routes/index.js"
+import dotenv from 'dotenv';
+import { submitForm } from "./controllers/form.controller.js"
 
 const app = express();
 
+dotenv.config();
+
 app.use(express.json());
-
-
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use(cors());
-app.options("*", cors());
 
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+app.post("/submit/:id", submitForm)
 app.use("/v1", routes);
+
 
 app.get("/", (req, res) => {
     res.send('hello world')
 })
 
-// app.use(errorHandler)
-
-// const jsonErrorHandler = (err, req, res, next) => {
-//     res.send({ error: err.message });
-// }
-
-
-module.exports = app;
+export default app;

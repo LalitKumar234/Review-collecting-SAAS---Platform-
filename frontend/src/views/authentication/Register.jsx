@@ -21,28 +21,21 @@ import axios from 'axios';
 import { SelectedItems } from '@/components/ui/selected'
 import { Toaster } from "@/components/ui/toaster"
 import { useToast } from "@/components/ui/use-toast"
-import { backendConfig } from '../config'
+import { backendConfig } from '../../config'
 import { Link, useNavigate } from 'react-router-dom'
-import { allSubjects, languages } from '../constants'
+import { allSubjects, languages } from '../../constants'
+import { loginSuccess, userLoaded } from '../../redux/reducers/authSlice'
+import { useDispatch } from 'react-redux'
 
-// const languages = ['English', 'Hindi', 'Spanish', 'German']
-// const allSubjects = ['Maths', 'Science', 'SocialScience', 'GeneralKnowledge', 'IT']
-
-const Register = ({ setIsLoggedIn, setRole }) => {
+const Register = () => {
     const { toast } = useToast()
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [userDetails, setUserDetails] = useState({
         email: "",
         username: "",
         password: "",
-        role: "",
-        language: "",
-        subjectsAllowed: []
     })
-
-    console.log(userDetails)
-
-
     const handleChange = (value) => {
         console.log(value)
         if (userDetails.subjectsAllowed.includes(value)) {
@@ -60,25 +53,27 @@ const Register = ({ setIsLoggedIn, setRole }) => {
         axios.post(`${backendConfig.baseUrl}auth/register`, userDetails)
             .then((res) => {
                 console.log(res.data)
+                navigate('/')
                 localStorage.setItem('userDetails', JSON.stringify({
-                    email: res.data.user?.email,
-                    role: res.data.user?.role,
+                    email: res.data.user.email,
                     username: res.data.user?.username,
-                    token: res.data.tokens.access.token,
-                    language: res.data.user?.language,
-                    teacherDetails: { subjectsAllowed: res.data.user.role === "teacher" ? res.data.user.subjectsAllowed : null }
+                    formId: res.data.formId
                 }))
                 localStorage.setItem('isLoggedIn', true)
-                setRole(res.data.user?.role)
-                setIsLoggedIn(true)
-                res.data.user.role === "teacher" ? navigate('/teacher') : navigate('/student')
+                localStorage.setItem('token', res.data.tokens.access.token)
+                dispatch(loginSuccess(res.data.tokens.access.token));
+                dispatch(userLoaded({
+                    email: res.data.user.email,
+                    username: res.data.user?.username,
+                    formId: res.data.formId
+                }));
             })
-            .catch(err => {
-                console.log(err.request.status, 'error')
+            .catch((err) => {
+                console.error(err, 'error')
                 toast({
                     variant: "destructive",
                     title: "Uh oh!",
-                    description: err.request.status === 409 ? "Email already in use please login" : "Something went wrong please try again after sometimes",
+                    description: err?.response?.status === 409 ? "Email already in use please login" : "Something went wrong please try again after sometimes",
                 })
             })
     }
@@ -124,33 +119,6 @@ const Register = ({ setIsLoggedIn, setRole }) => {
                                 placeholder="********"
                                 onChange={(e) => setUserDetails({ ...userDetails, password: e.target.value.trim() })}
                             />
-                        </div>
-                        <div className="grid gap-2 w-full">
-                            <Label htmlFor="title">Select Role</Label>
-                            <Select onValueChange={(value) => setUserDetails({ ...userDetails, role: value })}>
-                                <SelectTrigger className="w-full">
-                                    <SelectValue placeholder="Select Role" />
-                                </SelectTrigger>
-                                <SelectContent>
-                                    <SelectItem value="student">Student</SelectItem>
-                                    <SelectItem value="teacher">Teacher</SelectItem>
-                                </SelectContent>
-                            </Select>
-                        </div>
-                        <div className='flex w-full gap-4'>
-                            <div className="grid gap-2 w-full">
-                                <Label htmlFor="title">Select your Language</Label>
-                                <Select onValueChange={(value) => setUserDetails({ ...userDetails, language: value })}>
-                                    <SelectTrigger className="w-full">
-                                        <SelectValue placeholder="Select Language" />
-                                    </SelectTrigger>
-                                    <SelectContent>
-                                        {
-                                            languages.map((lang, id) => <SelectItem key={id} value={lang.toLocaleLowerCase()}>{lang}</SelectItem>)
-                                        }
-                                    </SelectContent>
-                                </Select>
-                            </div>
                         </div>
                         {
                             userDetails.role === 'teacher' && (
