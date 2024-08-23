@@ -19,7 +19,7 @@ ReviewCollect is a comprehensive SaaS platform designed to help businesses effor
 - Frontend: [React](https://reactjs.org/)
 - Backend: [Node.js](https://nodejs.org/), [Express.js](https://expressjs.com/)
 - Database: [MongoDB](https://www.mongodb.com/)
-- Storage [S3](https://www.aws.com)
+- Storage [AWS S3](https://aws.amazon.com)
 
 ## Setup Instructions
 
