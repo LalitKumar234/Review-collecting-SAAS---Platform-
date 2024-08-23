@@ -1,4 +1,4 @@
-# ReviewCollect - A Powerful SaaS for Gathering Customer Testimonials
+# <h1 style="text-align: center;">ReviewCollect - A Powerful SaaS for Gathering Customer Testimonials
 
 <img width="1470" alt="image" src="https://github.com/user-attachments/assets/15fb4df9-db71-4de6-8658-3bc5cd769252">
 
