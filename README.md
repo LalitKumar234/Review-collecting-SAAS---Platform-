@@ -1,4 +1,7 @@
-# ReviewCollect - A Powerful SaaS for Gathering Customer Testimonials
+# <h1 style="text-align: center;">ReviewCollect - A Powerful SaaS for Gathering Customer Testimonials
+
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/15fb4df9-db71-4de6-8658-3bc5cd769252">
+
 
 ReviewCollect is a comprehensive SaaS platform designed to help businesses effortlessly collect and showcase customer testimonials. Whether you need text-based feedback or video testimonials, ReviewCollect offers a customizable and user-friendly experience that ensures you get the most out of your customer interactions.
 
@@ -41,4 +44,16 @@ We welcome contributions to improve ReviewCollect! Please feel free to submit a 
 This project is licensed under the MIT License.
 
 ## Some Screenshots
+
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/abc0409f-79db-48b5-b802-44f27ce334e7">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/5e96d106-2576-4986-ad34-e0f7f9b80c00">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/4a00ff60-d586-455b-86d8-03f0fc142b25">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/992abaec-bbe7-4c0b-9258-42edf679f4fd">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/de3f5d6f-e1a7-413c-8e92-f31aa86492f4">
+<img width="1468" alt="image" src="https://github.com/user-attachments/assets/13979786-da16-4dce-9ec0-0ed958acce65">
+<img width="1467" alt="image" src="https://github.com/user-attachments/assets/5a869426-dd1c-4dee-9c25-90fcf1c1024c">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/ed57f21e-d9ad-4e9b-afb6-4f3fa2f348de">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/e31926d7-81e4-4a1e-a292-48f9da749d64">
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/fc7f3e0c-93b8-404e-beae-d6e9e34a22c9">
+
 
