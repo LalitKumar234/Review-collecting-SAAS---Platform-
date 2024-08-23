@@ -5,6 +5,13 @@
 
 ReviewCollect is a comprehensive SaaS platform designed to help businesses effortlessly collect and showcase customer testimonials. Whether you need text-based feedback or video testimonials, ReviewCollect offers a customizable and user-friendly experience that ensures you get the most out of your customer interactions.
 
+## Pricing
+
+- **Setup & Support**: ₹5000 INR for full project setup and support.
+- **Additional Features**: Contact us for custom features and ongoing support.
+
+For details, email [support@yourdomain.com](mailto:frontendedy@gmail.com).
+
 ## Features
 - User Registration & Login: Secure user registration and login functionality to keep your data safe and personalized.
 
