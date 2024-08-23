@@ -1,5 +1,8 @@
 # ReviewCollect - A Powerful SaaS for Gathering Customer Testimonials
 
+<img width="1470" alt="image" src="https://github.com/user-attachments/assets/15fb4df9-db71-4de6-8658-3bc5cd769252">
+
+
 ReviewCollect is a comprehensive SaaS platform designed to help businesses effortlessly collect and showcase customer testimonials. Whether you need text-based feedback or video testimonials, ReviewCollect offers a customizable and user-friendly experience that ensures you get the most out of your customer interactions.
 
 ## Features
