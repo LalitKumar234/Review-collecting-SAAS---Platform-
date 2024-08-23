@@ -10,7 +10,7 @@ ReviewCollect is a comprehensive SaaS platform designed to help businesses effor
 - **Setup & Support**: ₹5000 INR for full project setup and support.
 - **Additional Features**: Contact us for custom features and ongoing support.
 
-For details, email [support@yourdomain.com](mailto:frontendedy@gmail.com).
+For details, email [frontendedy@gmail.com](mailto:frontendedy@gmail.com).
 
 ## Features
 - User Registration & Login: Secure user registration and login functionality to keep your data safe and personalized.
